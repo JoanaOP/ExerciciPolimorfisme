@@ -1,12 +1,12 @@
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Arrays;
 
 
 public class GestorFiguras {
 
-    static double suma(List<Figura> listFigures){
+    static double suma(Figura[] listFigures){
         double sumaAreas = 0;
 
         for(Figura figura : listFigures){
@@ -15,9 +15,9 @@ public class GestorFiguras {
         return sumaAreas;
     }
 
-    static void sort(List<Figura> listFigures){
+    static void sort(Figura[] listFigures){
 
-        Collections.sort(listFigures);
+        Arrays.sort(listFigures);
 
     }
 
@@ -34,16 +34,16 @@ public class GestorFiguras {
         System.out.println("La area del cercle es: " + cercle.area());
         System.out.println("La area del quadrat es: " + quadrat.area());
 
-        List<Figura> myList = new ArrayList<Figura>();
-        myList.add(triangle);
-        myList.add(rectangle);
-        myList.add(cercle);
-        myList.add(quadrat);
+        Figura[] vectorFigures = new Figura[4];
+        vectorFigures[0] = triangle;
+        vectorFigures[1] = rectangle;
+        vectorFigures[2] = cercle;
+        vectorFigures[3] = quadrat;
 
-        System.out.println("La suma de les arees es: " + suma(myList));
-        sort(myList);
+        System.out.println("La suma de les arees es: " + suma(vectorFigures));
+        sort(vectorFigures);
         System.out.println("Arees ordenades: ");
-        for(Figura f : myList) {
+        for(Figura f : vectorFigures) {
             System.out.println(f.area());
         }
 
